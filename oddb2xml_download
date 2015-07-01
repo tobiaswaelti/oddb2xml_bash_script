@@ -1,9 +1,10 @@
 #!/bin/bash
 
-export http_proxy=http://172.16.0.1:8080
-export https_proxy=http://172.16.0.1:8080
+export http_proxy=http://0.0.0.0:8080
+export https_proxy=http://0.0.0.0:8080
 
 ## check for Update
+gem_install_oddb2xml.sh
 
 #### Download Data via oddb2xml (45)
 cd /opt/ODDB2XML/files/45
