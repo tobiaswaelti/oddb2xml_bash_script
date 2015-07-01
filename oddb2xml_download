@@ -1,0 +1,54 @@
+#!/bin/bash
+
+export http_proxy=http://172.16.0.1:8080
+export https_proxy=http://172.16.0.1:8080
+
+## check for Update
+
+#### Download Data via oddb2xml (45)
+cd /opt/ODDB2XML/files/45
+oddb2xml -e -I 45 -c zip
+
+## extract zip File and move it to /opt/ODDB2XML/transfer/45
+mkdir /opt/ODDB2XML/transfer/45
+mv /opt/ODDB2XML/files/45/*.zip /opt/ODDB2XML/transfer/45/oddb2xml.zip
+unzip -d /opt/ODDB2XML/transfer/45/ /opt/ODDB2XML/transfer/45/oddb2xml.zip
+
+## remove unused files and directories
+rm -Rf /opt/ODDB2XML/files/45/oddb2xml_files_* /opt/ODDB2XML/files/45/swissmedic_* /opt/ODDB2XML/files/45/epha_interactions.csv /opt/ODDB2XML/files/45/zurrose_transfer.dat /opt/ODDB2XML/files/45/duplicate_ean13_from_zur_rose.txt /opt/ODDB2XML/files/45/downloads/ /opt/ODDB2XML/files/45/oddb_*
+
+
+#### Download Data via oddb2xml (50)
+cd /opt/ODDB2XML/files/50
+oddb2xml -e -I 50 -c zip
+
+## extract zip File and move it to /opt/ODDB2XML/transfer/50
+mkdir /opt/ODDB2XML/transfer/50
+mv /opt/ODDB2XML/files/50/*.zip /opt/ODDB2XML/transfer/50/oddb2xml.zip
+unzip -d /opt/ODDB2XML/transfer/50/ /opt/ODDB2XML/transfer/50/oddb2xml.zip
+
+## remove unused files and directories
+rm -Rf /opt/ODDB2XML/files/50/oddb2xml_files_* /opt/ODDB2XML/files/50/swissmedic_* /opt/ODDB2XML/files/50/epha_interactions.csv /opt/ODDB2XML/files/50/zurrose_transfer.dat /opt/ODDB2XML/files/50/duplicate_ean13_from_zur_rose.txt /opt/ODDB2XML/files/50/downloads/ /opt/ODDB2XML/files/50/oddb_*
+
+#### Download Data via oddb2xml (55)
+cd /opt/ODDB2XML/files/55
+oddb2xml -e -I 55 -c zip
+
+## extract zip File and move it to /opt/ODDB2XML/transfer/55
+mkdir /opt/ODDB2XML/transfer/55
+mv /opt/ODDB2XML/files/55/*.zip /opt/ODDB2XML/transfer/55/oddb2xml.zip
+unzip -d /opt/ODDB2XML/transfer/55/ /opt/ODDB2XML/transfer/55/oddb2xml.zip
+
+## remove unused files and directories
+rm -Rf /opt/ODDB2XML/files/55/oddb2xml_files_* /opt/ODDB2XML/files/55/swissmedic_* /opt/ODDB2XML/files/55/epha_interactions.csv /opt/ODDB2XML/files/55/zurrose_transfer.dat /opt/ODDB2XML/files/55/duplicate_ean13_from_zur_rose.txt /opt/ODDB2XML/files/55/downloads/ /opt/ODDB2XML/files/55/oddb_*
+
+#### Download Data via oddb2xml
+cd /opt/ODDB2XML/files
+oddb2xml -e -c zip
+
+## extract zip File and move it to /opt/ODDB2XML/transfer
+mv /opt/ODDB2XML/files/*.zip /opt/ODDB2XML/transfer/oddb2xml.zip
+unzip -d /opt/ODDB2XML/transfer/ /opt/ODDB2XML/transfer/oddb2xml.zip
+
+## remove unused files and directories
+rm -Rf /opt/ODDB2XML/files/oddb2xml_files_* /opt/ODDB2XML/files/swissmedic_* /opt/ODDB2XML/files/epha_interactions.csv /opt/ODDB2XML/files/zurrose_transfer.dat /opt/ODDB2XML/files/duplicate_ean13_from_zur_rose.txt /opt/ODDB2XML/files/downloads/ /opt/ODDB2XML/files/oddb_* /opt/ODDB2XML/files/oddb_*
